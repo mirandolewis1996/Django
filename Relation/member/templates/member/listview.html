@@ -1,0 +1,91 @@
+{% extends 'member/base_page.html' %}
+
+{% block content %}
+
+<div class="list_parent">
+
+    
+    <div class="child_table">
+        {% if page_obj %}
+      
+        <h2>Relation List</h2>
+
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th colspan="2">Action</th>
+            </tr>
+            {% for lists in page_obj %}
+            <tr>
+               
+                <td>{{lists.firstname}}</td>
+                <td>{{lists.lastname}}</td>
+                <td> <a href="{% url 'edit_link' lists.id %}" class="action_edit">Edit</a> </td>
+                <td><a href="{% url 'del_lis_link' lists.id %}" class="action_delete">Remove</a></td>
+                
+            </tr>
+            {% endfor %}
+           
+        </table>
+
+        <div class="delesec" id="delblk">
+            <a href="#" id="rmnam">close</a>
+         </div>
+
+        
+
+        {% else %}
+
+        <h2>No Memeber Found</h2>
+
+        <div class="list_sec">
+         
+            <a href="{% url 'home_link' %}" class="my-3">Back</a>
+        </div>
+
+        {% endif %}
+        
+    </div>
+
+    <div class="list_sec  " >
+        
+            
+    
+    </div>
+
+    <div class="list_sec">
+
+        <div class="list_home">
+            
+           </div>
+                
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+        
+                <a href="{% url 'home_link' %}"><i class="fa-solid fa-house"></i></a>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+     
+    </div>
+
+  
+
+     
+ </div>
+
+
+ 
+
+
+{% endblock %}

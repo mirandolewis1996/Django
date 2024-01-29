@@ -1,0 +1,24 @@
+{% extends "member/base_page.html" %}
+
+{% block content %}
+
+{% if dellis %}
+<div class="del_main">
+
+    <div class="del_sec">
+        <h1>Delete...!</h1>
+
+        <p>Do you wanna delete <span style="color:tomato;font-weight:700;">{{dellis.firstname}} {{dellis.lastname}}</span> ?</p>
+        
+       <div class="del_link">
+        <a href="{% url 'del_link' dellis.id %}">Delete</a>
+        
+        <a href="{% url 'list_link' %}">Cancel</a>
+       </div>
+    </div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

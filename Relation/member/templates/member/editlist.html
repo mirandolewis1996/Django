@@ -1,0 +1,35 @@
+{% extends "member/base_page.html" %}
+
+{% block content %}
+
+<div class="edit_main">
+
+    <div class="edit_sec">
+
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <input type="text" value="{{firstname}}" name="firstname" class="py-3">
+            </div>
+
+            <div>
+                <input type="text" value="{{lastname}}" name="lastname">
+            </div>
+
+            <div>
+                <input type="submit" value="Update">
+            </div>
+
+        </form>
+
+        <div class="close_edit">
+            <a href="{% url 'list_link' %}"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+
+    </div>
+
+    
+
+</div>
+
+{% endblock %}

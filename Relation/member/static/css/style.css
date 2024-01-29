@@ -1,0 +1,428 @@
+
+/* home*/
+*{
+	margin:0;
+	box-sizing:border-box;
+}
+body{
+	font-family: 'Exo 2', sans-serif;
+}
+
+.parent{
+	height:100vh;
+	background:linear-gradient(90deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url("/static/img/office.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	
+
+}
+
+.create_form{
+	background-color:white;
+	transition:0.5s;
+	background-color:#7077A1;
+	height:350px;
+	width:400px;
+	border-radius:20px;
+	position:absolute;
+	top:-500px;
+
+}
+
+.mainchild{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+	height:100vh;
+	overflow:hidden;
+	position:relative;
+}
+
+.create_form.act1{
+	transition:0.5s;
+	top:100px;
+}
+
+.child a{
+      color:white;
+      font-weight:700;
+      transition:0.5s;
+      border:1px solid white;
+      border-radius:10px;
+      padding:15px 20px;
+      font-family:sans-serif;
+      text-decoration:none;
+}
+
+.list_sec a{
+	color:white;
+      font-weight:700;
+      transition:0.5s;
+      border:1px solid white;
+      border-radius:10px;
+      padding:15px 20px;
+      font-family:sans-serif;
+      text-decoration:none;
+}
+
+.list_sec a:hover{
+	transition:0.5s;
+	background-color:white;
+	color:black;
+
+}
+
+
+
+.child a:hover{
+	transition:0.5s;
+	background-color:white;
+	color:black;
+
+}
+.create_form form{
+	width:80%;
+	margin:50px auto;
+
+}
+
+.create_form h1{
+	text-align:center;
+	margin:10px auto;
+	width:50%;
+}
+
+.create_form form input{
+	width:100%;
+	margin:13px auto;
+	border-radius:10px;
+	padding:8px;
+
+}
+
+.create_form  button i{
+	font-size:1.7em;
+}
+
+.create_form  button{
+	width:100%;
+	border-radius:10px;
+	border:none;
+
+	background-color:tomato;
+	padding:7px;
+	font-weight:800;
+	margin:auto;
+	text-align:center;
+	width:10%;
+      position:absolute;
+      top:0px;
+      right:0px;
+	transition:0.5s;
+
+}
+
+.create_form button:hover{
+	transition:0.5s;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	cursor:pointer;
+	color:white;
+	
+}
+
+.create_form form input[type="submit"]{
+	border:none;
+	background-color:#9ED2BE;
+	transition:0.5s;
+      font-weight:800;
+}
+
+.create_form form input[type="submit"]:hover{
+	transition:0.5s;
+	color:white;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	cursor:pointer;
+	
+}
+.create_form form input[type="text"]{
+	border:2px solid #6895D2;
+}
+
+.create_form form input[type="text"]:focus{
+	outline:none;
+	box-shadow: rgba(255, 255, 255,0.6) 0px 0px 0px 2px;
+
+}
+
+@media(max-width:420px){
+  
+    .create_form{
+        width:100%;
+    }
+}
+/* over */
+/* list view */
+.list_parent{
+	background:linear-gradient(90deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url("/static/img/laptop.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	height:100vh;
+	display:flex;
+	gap:30px;
+	justify-content:start;
+	align-items:center;
+	flex-direction:column;
+
+}
+
+
+.child_table{
+	background-color:white;
+	border-radius:10px;
+	width:50%;
+	margin:40px 0 0 0;
+}
+
+.child_table h2{
+	text-align:center;
+	padding:10px;
+}
+
+.child_table table{
+	background-color:white;
+	border-collapse:collapse;
+	border-radius:10px;
+	width:100%;
+	table-layout:fixed;
+
+}
+
+
+.action_edit{
+   text-decoration:none;
+   background-color:orange;
+   padding:5px 10px;
+   border-radius:10px;
+   color:white;
+}
+
+
+.child_table h2{
+	width:100%;
+}
+
+.action_delete{
+	text-decoration:none;
+	background-color:tomato;
+	margin:30px auto !important;
+	padding:5px 10px;
+	border-radius:10px;
+	color:white;
+ }
+
+
+
+ 
+
+.child_table table,th,td{
+	
+	font-weight:700;
+}
+
+
+.child_table td{
+	text-align:center;
+	padding:15px;
+}
+
+
+.child_table th{
+	background-color:#9EC8B9;
+	padding:20px;
+}
+
+.delesec{
+	position:absolute;
+	top:-300px;
+	left:0;
+	background-color:white;
+	width:300px;
+	height:300px;
+	transition:0.5s;
+}
+
+.delesec.act2{
+	transition:0.5s;
+	top:0;
+}
+
+
+.child_table tr:nth-child(odd) {background: #9EC8B9}
+
+
+@media(max-width:395px){
+	
+	.list_parent{
+		height:130vh;
+	}
+	.child_table table th{
+		font-size:0.5em;
+		padding:15px 10px;
+	}
+	.child_table table td{
+		font-size:0.5em;
+		padding:15px 10px;
+	}
+
+	
+
+}
+
+@media(max-width:567px){
+	.child_table table th{
+		font-size:0.8em;
+		padding:15px 10px;
+	}
+	.child_table table td{
+		font-size:0.8em;
+		padding:15px 10px;
+	}
+
+	.child_table{
+		width:330px !important;
+	}
+}
+
+
+@media(max-width:888px){
+      .child_table{
+		width:70%;
+	}
+}
+
+/* over */
+/* delete section */
+.del_main{
+	height:100vh;
+	background:linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/static/img/office.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.del_sec{
+	background-color:white;
+	padding:30px 25px 40px 25px;
+	border-radius:20px;
+}
+.del_link a:nth-child(1){
+	background-color:tomato;
+	border-radius:10px;
+	padding:10px 10px;
+}
+
+.del_link a:hover{
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	transition:0.5s;
+}
+
+.del_link a{
+	color:white;
+	font-weight:700;
+	transition:0.5s;
+	text-decoration:none;
+}
+
+.del_link a:nth-child(2){
+	background-color:#6895D2;
+	border-radius:10px;
+	padding:10px 10px;
+}
+.del_sec h1{
+     margin:30px auto;
+}
+.del_sec p{
+	margin:30px auto;
+}
+
+/* over */
+/* edit */
+.edit_main{
+	height:100vh;
+	background:linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/static/img/office.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.edit_sec{
+	background-color:red;
+	padding:30px;
+	border-radius:20px;
+	position:relative;
+}
+
+.edit_sec input{
+  margin:30px auto;
+
+
+}
+
+.edit_sec input[type="text"]{
+	padding:10px 5px !important;
+	border:none;
+}
+
+.edit_sec input[type="text"]:focus{
+	outline:5px solid black;
+	border-radius:10px;
+}
+
+
+
+.edit_sec input[type = "submit"]{
+   width:100%;
+   padding:10px;
+   background-color:tomato;
+   border:2px solid white;
+   border-radius:10px;
+   color:white;
+   transition:0.5s;
+   font-weight:700;
+
+}
+
+.edit_sec input[type = "submit"]:hover{
+	background-color:white;
+	color:black;
+	transition:0.5s;	
+ }
+ .close_edit{
+	position:absolute;
+	top:0px;
+	right:0px;
+	padding:5px 10px;
+	border-radius:10px;
+	background-color:white;
+ }
+
+
+
+
+
+ .list_home a{
+	color:black;
+ }
+
+ .list_home i{
+	font-size:1.3em;
+ }
+
