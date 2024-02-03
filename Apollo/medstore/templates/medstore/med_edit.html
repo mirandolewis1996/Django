@@ -1,0 +1,86 @@
+{% extends "medstore/base.html" %}
+
+{% block content %}
+
+<div class="parent">
+
+    <div class="child1" id="block1">
+
+        {% if user.is_authenticated or user.is_staff %}
+        <h2>Staff : {{ user.get_username }}</h2>
+        <div class="sidebar">
+            <a href="{% url 'home_link' %}">Home</a>
+            <a href="{% url 'Add_link' %}">Add Medicine</a>
+            <a href="{% url 'medlis_link' %}">Medicine List</a>
+            <div>
+                <a href="{% url 'logout_link' %}">Logout</a>
+            </div>
+            
+        </div>
+        
+        {% elif  user.is_authenticated %}
+        <h2>User : {{ user.get_username }}</h2>
+        {% endif %}
+
+    </div>
+
+    <div class="bars" id="btn1">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="child2 medform">
+        
+        <h1 style="text-align:center;margin-bottom:8px;" >Edit Medicine</h2>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+        
+            <p></p>
+            {% if err1 %}
+           <div >
+            <input type="text" name="medname" placeholder="{{err1}}" style="border:4px solid tomato;">
+           </div>
+           {% else %}
+
+           <div>
+            <input type="text" name="medname" placeholder="Medicine Name" value="{{med.medic_name}}">
+           </div>
+           {% endif %}
+
+
+           <div>
+            <input type="number" name="medprice" placeholder="Price" value="{{med.medic_price}}">
+           </div>
+
+           <div >
+            
+            <select id="id_med" name="medcho">
+                {% for value,label in med.medictype %}
+   
+                <option value="{{value}}" {% if value == med.medic_choice %} selected {% endif %}>{{label}}</option>
+                {% endfor %}
+               
+            </select>
+           </div>
+
+           
+           <div>
+            <select name="dislist" >
+               {% for diss in dis %}
+                <option value="{{diss.id}}" {% if diss in med.disease.all %} selected {% endif %}>{{diss.disease_name}}</option>
+               {% endfor %}
+            </select>
+           </div>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+
+
+
+
+</div>
+{% load static %}
+<script type="text/javascript" src="{% static 'js/event1.js' %}"></script>
+
+{% endblock %}

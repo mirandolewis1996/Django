@@ -1,0 +1,76 @@
+{% extends "medstore/base.html" %}
+
+{% block content %}
+
+<div class=" container-fluid parent">
+
+    <div class="child1" id="block1">
+
+        {% if user.is_authenticated and user.is_staff %}
+        <h2>Staff : {{ user.get_username }}</h2>
+        <div class="sidebar">
+            <a href="{% url 'Add_link' %}">Add Medicine</a>
+            <div>
+                <a href="{% url 'logout_link' %}">Logout</a>
+            </div>
+            
+        </div>
+       
+        {% else %}
+        <h2>User : {{ user.get_username }}</h2>
+        <div>
+           
+            <a href="{% url 'home_link' %}">Home</a>
+            <a href="{% url 'logout_link' %}">Logout</a>
+        </div>
+        {% endif %}
+
+
+    </div>
+
+    <div id="btn1" class="bars">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="med_search">
+       
+    <div class="med_sera">
+        <h1>Medicine Search</h1>
+     
+        <h6>Search for : {{searchmed}}</h6>
+   
+       <div class="my-4">
+        {% if medic %}
+        {% for med in medic %}
+   
+        <h3>{{med.medic_name}}</h3>
+        <h6>Price : <strong>{{med.medic_price}}</strong>/-</h6>
+        <div class="med_calluser my-4">
+            {% if user.is_staff %}
+            <a href="{% url 'med_edit_link' med.id %}">Edit</a>
+            <a href="{% url 'del_page' med.id %}" class="mx-3">Delete</a>
+            {% else %}
+            <a href="tel:8903944685" class="calluser">Call</a>
+            {% endif %}
+            
+        </div>
+        <hr>
+        {% endfor %}
+        {% else %}
+   
+        <h3>No Medicine Found</h3>
+        {% endif %}
+       </div>
+    </div>
+        
+       
+    </div>
+
+
+
+
+</div>
+
+{% load static %}
+<script type="text/javascript" src="{% static 'js/event1.js' %}"></script>
+{% endblock %}

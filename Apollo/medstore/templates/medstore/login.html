@@ -1,0 +1,48 @@
+{% extends "medstore/base.html" %}
+
+{% block content %}
+
+<div class="parent">
+
+   
+
+ 
+    <div class="child2 loginform">
+        
+        <h1 style="text-align:center;margin-bottom:8px;" >User Login</h2>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            {% if err %}
+            <div>
+                <p style="text-align:center;font-weight:700;color:tomato;">{{err}}</p>
+            </div>
+            {% endif %}
+            <div>
+                <input type="text" name="username" placeholder="Username">
+            </div>
+
+            <div>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+         
+            <input type="submit" value="Login">
+
+            <div style="width:50%;margin:10px auto;text-align:center;">
+                <a href="{% url 'reg_link' %}" style="text-align:center;">Register</a>
+            </div>
+        </form>
+
+       
+    </div>
+
+    
+
+
+
+
+</div>
+{% load static %}
+<script type="text/javascript" src="{% static 'js/event1.js' %}"></script>
+
+{% endblock %}

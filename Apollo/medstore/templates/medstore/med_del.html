@@ -1,0 +1,64 @@
+{% extends "medstore/base.html" %}
+
+{% block content %}
+
+<div class="parent">
+
+    <div class="child1" id="block1">
+
+        {% if user.is_authenticated or user.is_staff %}
+        <h2>Staff : {{ user.get_username }}</h2>
+        <div class="sidebar">
+            <a href="{% url 'home_link' %}">Home</a>
+            <a href="{% url 'Add_link' %}">Add Medicine</a>
+            <a href="{% url 'medlis_link' %}">Medicine List</a>
+            <div>
+                <a href="{% url 'logout_link' %}">Logout</a>
+            </div>
+            
+            
+        </div>
+       
+        {% elif  user.is_authenticated %}
+        <h2>User : {{ user.get_username }}</h2>
+        <div>
+            <div>
+                <a href="{% url 'logout_link' %}">Logout</a>
+            </div>
+        </div>
+        {% endif %}
+
+
+    </div>
+
+    <div id="btn1" class="bars">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="medet">
+         
+        <div class="listsec py-5">
+
+            <h1>Remove Medicine</h1>
+            
+            <h2 class="my-4">Are You Sure Wanna Delete "{{ delmed.medic_name }}" ?</h2>
+
+            <div class="delsec mt-3">
+                <a href="{% url 'meddel_link' delmed.id %}">Delete</a>
+                <a href="{% url 'medlis_link' %}">Cancel</a>
+            </div>
+             
+            
+            
+        </div>
+        
+    </div>
+
+
+
+
+</div>
+
+{% load static %}
+<script type="text/javascript" src="{% static 'js/event1.js' %}"></script>
+{% endblock %}

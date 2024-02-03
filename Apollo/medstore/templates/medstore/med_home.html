@@ -1,0 +1,74 @@
+{% extends "medstore/base.html" %}
+
+{% block content %}
+
+<div class="parent">
+
+    <div class="child1" id="block1">
+
+        {% if user.is_authenticated and user.is_staff %}
+        <h2>Staff : {{ user.get_username }}</h2>
+        <div class="sidebar">
+            <a href="{% url 'Add_link' %}">Add Medicine</a>
+            <div>
+                <a href="{% url 'logout_link' %}">Logout</a>
+            </div>
+            
+        </div>
+       
+        {% else %}
+        <h2>User : {{ user.get_username }}</h2>
+        <div>
+           
+            <a href="{% url 'home_link' %}">Home</a>
+            <a href="{% url 'logout_link' %}">Logout</a>
+            
+        </div>
+        {% endif %}
+
+
+    </div>
+
+    <div id="btn1" class="bars">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="medhome">
+       
+        <div class="home">
+            {% if user.is_authenticated and user.is_staff %}
+            <h1>Welcome Admin To Apollo Medstore</h1>
+            <h1 style="text-align:center;">{{ user.get_username }}</h1>
+          
+            {% else %}
+    
+            <h1>Welcome to Apollo Pharmacy</h1>
+            <h1 style="text-align:center;">{{ user.get_username }}</h1>
+            {% endif %}
+        </div>
+
+        <div class="actions">
+             <a href="{% url 'medlis_link' %}">View Medicine</a>
+             <form action="" method="post">
+                {% csrf_token %}
+                <div class="searchbar" >
+                    <input type="text" placeholder="Search" name="medsearch" autofocus >
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <div> 
+               
+             </form>
+        </div>
+        
+       
+    </div>
+
+
+
+
+</div>
+
+{% load static %}
+<script type="text/javascript" src="{% static 'js/event1.js' %}"></script>
+{% endblock %}

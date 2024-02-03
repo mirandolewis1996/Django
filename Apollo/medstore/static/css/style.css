@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Exo 2", sans-serif;
+}
+html{
+          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    
+}
+.child1 {
+  width: 300px;
+  background-color: 6895D2;
+  height: 100vh;
+  z-index:5;
+  left: -700px;
+  padding: 20px;
+  transition: 0.5s;
+  background-color: #0c2d57;
+  position: absolute;
+}
+
+.child1 h2 {
+  color: white;
+  margin-bottom: 30px;
+}
+.child1 a {
+  border: 1px solid white;
+  color: white;
+  font-weight: 700;
+  transition: 0.5s;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.child1 a:hover {
+  color: black;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.child1.act1 {
+  left: 0;
+  transition: 0.5s;
+}
+
+
+
+.parent {
+  position:relative;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/static/img/med.jpg");
+  background-repeat: no-repeat;
+  background-position:center;
+  display: flex;
+  justify-content: center;
+  height:100vh;
+  background-size: cover;
+  -moz-background-size:cover;
+  background-attachment: fixed;
+}
+
+
+.child2 {
+  padding: 50px;
+  background-color: white;
+  height: 450px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.bars {
+  position: absolute;
+  cursor: pointer;
+  right: 30px;
+  top: 30px;
+  background-color: white;
+  padding: 10px 12px;
+  border-radius: 50%;
+}
+
+.bars i {
+  font-weight: bolder;
+  font-size: 1.6em;
+}
+
+
+.medform {
+  background-color: #ffbb64;
+  margin-top: 50px;
+}
+.medform form input,
+select {
+  margin: 10px auto;
+  padding: 7px;
+  font-weight: 600;
+  font-size: 1em;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+.medform form input:focus,
+select:focus {
+  outline: 4px solid #ff6868;
+}
+
+@media (max-width: 576px) {
+  .child1 {
+    width: 100%;
+  }
+  .medet {
+    width: 90%;
+  }
+
+ 
+}
+
+
+
+
+
+
+.medet {
+  background-color: white;
+  border-radius: 10px;
+  height: 200px;
+  width: 70%;
+  margin-top: 100px;
+}
+
+.medlist {
+  margin-top: 30px;
+  width: 70%;
+  height: 500px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  scrollbar-color: red yellow;
+}
+
+.listsec {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.listsec h1 {
+  text-align: center;
+}
+
+.listmed h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.listmed a {
+  color: black;
+  text-decoration: none;
+}
+.listmed a:hover {
+  text-decoration: underline;
+}
+
+.listact a:nth-child(1) {
+  background-color: #ffbb64;
+}
+
+
+.calluser a{
+    background-color:#1F8A70 !important;
+    color:white !important;
+    padding:5px 15px !important;
+}
+
+.listact a:nth-child(2) {
+  background-color: tomato;
+}
+
+.listact a:hover {
+  background-color: white;
+  transition: 0.5s;
+  text-decoration: underline;
+}
+.listact a {
+  padding: 7px 10px;
+  transition: 0.5s;
+  font-size: 1em;
+  border-radius: 10px;
+  color: black;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+@media (max-width: 576px) {
+  .medlist {
+    width: 90%;
+  }
+  .medet {
+    width: 90%;
+  }
+}
+
+.medhome .home {
+  background-color: white;
+  margin: 120px auto;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.delsec {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+}
+
+.delsec a:nth-child(1) {
+  background-color: tomato;
+}
+
+.delsec a:nth-child(2) {
+  background-color: #6895d2;
+}
+
+.delsec a {
+  padding: 6px;
+  transition: 0.5s;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  color: black;
+}
+
+.delsec a:hover {
+  background-color: white;
+  transition: 0.5s;
+  text-decoration: underline;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.sidebar a {
+  width: 130px;
+  text-align: center;
+}
+
+.loginform {
+  background-color: #ffbb64;
+  height: 370px;
+  margin-top: 70px;
+}
+
+.loginform a{
+  font-weight:700;
+  color:black;
+}
+
+.loginform form input:focus {
+  outline: 4px solid #ff6868;
+}
+
+.loginform form input {
+  margin: 15px auto;
+  padding: 7px;
+  font-weight: 600;
+  font-size: 1em;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+.regform form input:focus {
+  outline: 4px solid #ff6868;
+}
+
+.regform form input {
+  margin: 15px auto;
+  padding: 7px;
+  font-weight: 600;
+  font-size: 1em;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+.regform{
+  background-color: #ffbb64;
+  height: 550px;
+  margin-top: 70px;
+}
+
+.searchbar {
+  position: relative;
+}
+
+.actions {
+  display: flex;
+
+  row-gap: 30px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions form input:focus {
+  outline: 4px solid #ff6868;
+}
+
+.actions form input {
+  border: none;
+}
+
+.actions form input[type="text"] {
+  width: 300px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+
+.searchbar button {
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: #ffbb64;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+.actions a {
+  background-color: #ffbb64;
+  padding: 7px;
+  border-radius: 15px;
+  transition: 0.5s;
+  border: none;
+  font-weight: 800;
+  color: black;
+  text-decoration: none;
+}
+
+.actions a:hover {
+  background-color: white;
+  transition: 0.5s;
+}
+
+.med_sera{
+  background-color:white;
+  padding:30px;
+  border-radius:20px;
+  margin-top:70px;
+}
+
+.med_search hr{
+  border:2px solid black;
+}
+
+
+.med_calluser a{
+  background-color:#1F8A70 !important;
+  color:white !important;
+  padding:5px 15px !important;
+  border-radius:20px;
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  width:100%;
+}
+
+.med_calluser a:hover{
+
+  text-decoration:underline;
+
+}

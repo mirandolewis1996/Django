@@ -1,0 +1,80 @@
+{% extends "medstore/base.html" %}
+
+{% block content %}
+
+<div class="parent">
+
+    <div class="child1" id="block1">
+
+        {% if user.is_authenticated and user.is_staff %}
+        <h2>Staff : {{ user.get_username }}</h2>
+        <div class="sidebar">
+            <a href="{% url 'home_link' %}">Home</a>
+            <a href="{% url 'Add_link' %}">Add Medicine</a>
+            <a href="{% url 'medlis_link' %}">Medicine List</a>
+            <div>
+                <a href="{% url 'logout_link' %}">Logout</a>
+            </div>
+            
+            
+        </div>
+       
+        {% elif  user.is_authenticated %}
+        <h2>User : {{ user.get_username }}</h2>
+        <div>
+            <div>
+                <a href="{% url 'logout_link' %}">Logout</a>
+            </div>
+        </div>
+        {% endif %}
+
+
+    </div>
+
+    <div id="btn1" class="bars">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="medlist">
+         
+        <div class="listsec">
+            <h1>Medicine List</h1>
+            {% if med %}
+            {% for medic in med %}
+            <div class="listmed row my-5 px-3">
+            
+                
+                <div class="col-lg-6">
+                    <h3><a href="{% url 'med_detail_link' medic.id %}">{{medic.medic_name}} </a></h3>
+                    <h6>Price: <span style="font-weight:700;">{{medic.medic_price}}</span> /-</h6>
+                </div>
+
+                <div class="col-lg-6 listact calluser p-3">
+                    {% if user.is_staff %}
+                    <a href="{% url 'med_edit_link' medic.id %}">Edit</a>
+                    <a href="{% url 'del_page' medic.id %}" class="mx-3">Delete</a>
+                    {% else %}
+                    <div class="calluser">
+                        <a href="tel:8903944685" class="calluser">Call</a>
+                    </div>
+                    {% endif %}
+       
+                </div>
+                
+            
+            </div>
+            {% endfor %}
+            {% endif %}
+            
+        </div>
+        
+    </div>
+
+
+
+
+</div>
+
+{% load static %}
+<script type="text/javascript" src="{% static 'js/event1.js' %}"></script>
+{% endblock %}
