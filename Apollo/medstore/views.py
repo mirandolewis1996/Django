@@ -31,7 +31,7 @@ def med_create(request):
           med_name = request.POST["medname"]
           disease_id = request.POST.getlist("dislist")
           med_price = request.POST["medprice"]
-          med_choice = request.POST.get("medcho","")
+          med_choice = request.POST.get("medcho")
 
           if med_name == "":
             err1 = "Enter Medicine Name"

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="forms">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <h2>User Register</h2>
+        </div>
+        {% if err1 %}
+        <p>{{err1}}</p>
+        {% endif %}
+        {% if err2 %}
+        <p>{{err2}}</p>
+        {% endif %}
+        <div>
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div>
+            <input type="text" name="firstname" placeholder="First name">
+        </div>
+        <div>
+            <input type="text" name="lastname" placeholder="Last name">
+        </div>
+        <div>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <div>
+            <input type="submit" value="Register" >
+        </div>
+    </form>
+
+    
+</div>
+
+
+
+
+{% endblock %}
+    

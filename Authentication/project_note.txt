@@ -1,0 +1,11 @@
+Authentication project has done by django 2.2 version
+
+-----Note-----
+
+1.To login, User need to register the details.
+
+2.After registration is over, it navigate to login page.
+
+3.Then user need to provid their username and password.
+
+4.After login, the user can able to visit the home page 

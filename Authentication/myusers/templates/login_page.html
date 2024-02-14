@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="forms">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <h2>User Login</h2>
+        </div>
+        <div>
+            {% if err %}
+            <p>{{err}}</p>
+            {% endif %}
+        </div>
+        <div>
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <div>
+            <input type="submit" value="Login" >
+        </div>
+    </form>
+
+    <a href="{% url 'register_link' %}">register</a>
+    
+</div>
+
+
+
+
+{% endblock %}
+    

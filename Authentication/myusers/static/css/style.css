@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    box-sizing:border-box;
+}
+
+.parent{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    flex-direction:column;
+    gap:10px;
+    background-color:tomato;
+}
+
+.parent .home{
+    background-color:white;
+    padding:50px;
+    border-radius:20px;
+}
+
+.parent .forms{
+    background-color:white;
+    padding:50px;
+    border-radius:20px;
+}
+
+.forms div{
+    margin:20px auto;
+}
+
+.forms input{
+    padding:10px;
+    font-size:0.9em;
+}
+
+
+
+@media(max-width:576px){
+    .parent{
+        height:auto;
+        padding:170px ;
+    }
+}
